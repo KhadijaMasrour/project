@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            .body{
+                background-image: url(img/baag.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; 
+                background-position: center;
+                width: 1270px;
+                height: 800px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: absolute;
+                gap: 50px;
+                top: 0px;
+                left: 0px;
+            }
+            .header{
+                width: 1265px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                height: 80px;
+                position: absolute;
+                top: 0px;
+                color: azure;
+                left: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top: 0%;
+                z-index: 3;
+            }
+            .Menu{
+                width: 700px;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4px;
+            }
+            .reserve button:active{
+                background-color: #120291;
+                color: white;
+            }
+            .logo{
+                display: flex;
+                height: 60px;
+            }
+            .Contact{
+                width: 800px;
+                height: 400px;
+                background-color: transparent;
+                backdrop-filter: blur(10px);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .ctn{
+                width: 800px;
+                height: 300px;
+                display: flex;
+                justify-content: space-around;
+            }
+            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            .mil{display: none;}
+            .reserve button{
+                background: transparent;
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: medium;
+            }
+            .reserve button:hover{
+                background: rgba(4, 57, 121, 0.507);
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: large;
+            }
+            .ctn2{
+                width: 2px;
+                height: 200px;
+                background-color: white;
+            }
+            .Contact:hover{
+                box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                backdrop-filter: blur(8px);
+                font-size:medium;
+            }
+            .tn:hover{
+                text-shadow: 0 0 8px #ffffff, 0 0 20px #c3e2ff;
+            }
+            .titre:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            @media screen and (max-width:1024px)  {
+                .Rooms{
+                    width: 800px;
+                    height: 2800px;
+                }
+                .header{
+                    width: 1000px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 1000px;
+                }
+                .box-area{
+                    flex-wrap: wrap;
+                    max-width: 800px;
+                }
+                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
+                .Menu{display: none;}
+                .Contact{max-width: 750px; gap: 0px;}
+            }
+            @media screen and (max-width:768px)  {
+                .Rooms{
+                    width: 400px;
+                    height: 2200px;
+                }
+                .header{
+                    width: 700px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 600px;
+                    height: 3000px;
+                }
+                .mil{display: contents;}
+                .Menu{display: none;}
+                .header{display: flex; justify-content: space-between; max-width: 600px;}
+                .Contact{max-width: 400px; flex-direction: column; height: 600px !important; align-items: center;}
+                .ctn{flex-direction: column; max-width: 300px; height: 400px !important; }
+                .ctn2{max-width: 0px; height: 0px !important; }
+            }
+            .ip:hover{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: solid 1px transparent;
+                box-shadow: 0 0 8px #ffffff, 0 0 20px #c3e2ff ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            div h1:hover{text-shadow: 0 0 8px #ffffff, 0 0 20px #c3e2ff ;}
+            .ctn2:hover{box-shadow: 0 0 8px #ffffff, 0 0 20px #c3e2ff ;}
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="header">
+                <div class="logo">
+                    <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
+                </div>
+               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div class="Menu">
+                    <a href="Acceuil.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
+                    <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
+                    <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
+                    <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
+                    <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
+                    <div><a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Contact </h3> </a>
+                        <div style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 70px; height: 2px;"></div>
+                    </div>
+                </div>
+                <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
+            </div>
+            <div class="Contact">
+                <div><h1>Contact us</h1></div>
+                <div class="ctn">
+                    <div class="ctn1">
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img  src="img/whatsapp.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| Whatsapp : 0661840777</h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/facebook.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| FaceBook : SeaNova </h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/tik-tok.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| Tiktok : SeaNova </h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/instagram.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| Instagram : SeaNova </h3></div>
+                    </div>
+                    <div class="ctn2"></div>
+                    <div class="ctn3">
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/youtube.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| Youtube : SeaNova</h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/spotify.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| Spotify: SeaNova </h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/discord.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| discord : <a href="https://discord.gg/jmdgF3rY" style="color: white; text-decoration: solid;"> discord.gg/SeaNova</a> </h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/mail.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| Email : SeaNova@gmail.com </h3></div>
+                    </div>
+                </div>
+            </div>
+            <Footer style="color: azure;">
+                <p >&copy: Seaship by Khadija Masrour</p>
+            </Footer>
+        </div>
+    </body> 
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rooms</title>
+        <style>
+            .body{
+                background-image: url(img/baag.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; 
+                background-position: center;
+                width: 1270px;
+                height: 1000px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: absolute;
+                gap: 50px;
+                top: 0px;
+                left: 0px;
+                overflow-x: hidden;
+            }
+            .header{
+                width: 1265px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                height: 80px;
+                position: absolute;
+                top: 0px;
+                color: azure;
+                left: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top: 0%;
+                z-index: 3;
+            }
+            .Menu{
+                width: 700px;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4px;
+            }
+            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            .mil{display: none;}
+            .reserve button{
+                background: transparent;
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: medium;
+            }
+            .reserve button:hover{
+                background: rgba(4, 57, 121, 0.507);
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: large;
+            }
+            .reserve button:active{
+                background-color: #120291;
+                color: white;
+            }
+            .logo{
+                display: flex;
+                height: 60px;
+            }
+            .box-area{
+                width: 1200px;
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+            }
+            .box{
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 5px 5px 15px rgba(4, 4, 129, 0.688);
+            }
+            .overlay{
+                color: azure;
+                height: 0;
+                width: 100%;
+                background: linear-gradient(transparent,rgba(3, 20, 80, 0.882));
+                border-radius: 10px;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                padding: 0 40px;
+                text-align: center;
+                font-size: 14px;
+                transition: height 0.5s;
+            }
+            .overlay p{
+                font-weight: 100;
+                font-family: bebas neue;
+                font-size: 15px;
+            }
+            .overlay button{
+                width: 65px;
+                height: 30px;
+                margin-top: 10px;
+                background: transparent;
+                color: #fcfbfb;
+                border-radius:10px ;
+                border: solid 1px white;
+            }
+            box:hover img{
+                transform: scale(1.2);
+            }
+            .box:hover .overlay{
+                height: 100%;
+            }
+            .Rooms{
+                width: 1200px;
+                height: 1200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                backdrop-filter: blur(20px);
+            }
+            .prix{
+                color: white;
+                font-weight: lighter;
+                font-style: italic;
+                text-align: center;
+                font-size: medium;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .titre:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            .overlay button:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            .overlay button:active{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                background-color: #130291a3;
+            }
+            @media screen and (max-width:1024px)  {
+                .Rooms{
+                    width: 800px;
+                    height: 2800px;
+                }
+                .header{
+                    width: 1000px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 1000px;
+                }
+                .box-area{
+                    flex-wrap: wrap;
+                    max-width: 800px;
+                }
+                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
+                .Menu{display: none;}
+            }
+            @media screen and (max-width:768px)  {
+                .Rooms{
+                    width: 400px;
+                    height: 2200px;
+                }
+                .header{
+                    width: 700px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 600px;
+                    height: 3000px;
+                }
+                .mil{display: contents;}
+                .Menu{display: none;}
+                .header{display: flex; justify-content: space-between; max-width: 600px;}
+                .box-area{max-width: 400px; flex-direction: column; align-items: center;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="header">
+                <div class="logo">
+                    <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
+                </div>
+               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div class="Menu">
+                    <a href="Acceuil.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
+                    <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
+                    <div><a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Rooms</h3></a><div style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 55px; height: 2px;"></div></div>
+                    <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
+                    <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
+                    <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                </div>
+                <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
+            </div>
+            <div class="Rooms">
+                <div><h1 style=" font-weight: lighter; font-style: italic; color: #120291; text-shadow:0 0 10px #ffffff, 0 0 25px #c3e2ff ;">Rooms</h1></div>
+                <div class="box-area">
+                    <div class="box">
+                        <img src="img/room.jpg" style="width: 350px; height: 300px;">
+                        <div class="overlay">
+                            <p>Standard room for two guests.</p>
+                            <div class="prix">Prix : 110$</div>
+                            <a href="reserve.html"><button>reserve</button></a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="img/room2.jpg" style="width: 350px; height: 300px;">
+                        <div class="overlay">
+                            <p>Ideal room for solo travelers or couples.</p>
+                            <div class="prix">Prix : 100$</div>
+                            <a href="reserve.html"><button>reserve</button></a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="img/room3.jpg" style="width: 350px; height: 300px;">
+                        <div class="overlay">
+                            <p>Ideal room for solo travelers or couples.</p>
+                            <div class="prix">Prix : 100$</div>
+                            <a href="reserve.html"><button>reserve</button></a>
+                        </div> 
+                    </div>
+                </div>
+                <div><h1 style=" font-weight: lighter; font-style: italic; color: #120291; text-shadow:0 0 10px #ffffff, 0 0 20px #c3e2ff ;">luxury rooms</h1></div>
+                <div class="box-area">
+                    <div class="box">
+                        <img src="img/Vip1.jpg" style="width: 350px; height: 300px;">
+                        <div class="overlay">
+                            <p>Luxury room featuring an open ceiling.</p> 
+                            <div class="prix">Prix : 900$</div><a href="reserve.html"><button>reserve</button></a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="img/vip2.jpg" style="width: 350px; height: 300px;">
+                        <div class="overlay">
+                            <p>Private balcony and pool luxury room.</p>
+                            <div class="prix">Prix : 1000$</div>
+                            <a href="reserve.html"><button>reserve</button></a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="img/vip3.jpg" style="width: 350px; height: 300px;">
+                        <div class="overlay">
+                            <p>Luxury room with a private bath and jacuzzi.</p>
+                            <div class="prix">Prix : 1000$</div>
+                            <a href="reserve.html"><button>reserve</button></a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <Footer style="color: azure;">
+                <p >&copy: Seaship by Khadija Masrour</p>
+            </Footer>
+        </div>
+    </body> 
+</html>

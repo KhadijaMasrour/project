@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                overflow-x: hidden;
+            }
+            .body{
+                background-image: url(img/baag.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; 
+                background-position: center;
+                width: 1270px;
+                height: 650px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: start;
+                position: absolute;
+                gap: 150px;
+                top: 0px;
+                left: 0px;
+            }
+            .header{
+                width: 1265px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                height: 80px;
+                position: absolute;
+                top: 0px;
+                color: azure;
+                left: 0px;
+                display: flex;
+                gap: 200px;
+                align-items: center;
+                position: sticky;
+                top: 0%;
+                z-index: 3;
+            }
+            .Menu{
+                width: 700px;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4px;
+            }
+            .logo{
+                display: flex;
+                height: 60px;
+            }
+            .Reserve{
+                width: 150px;
+                height: 70px;
+                background-color: rgba(216, 227, 249, 0.2);
+                border-radius: 10px;
+                font-size: x-large;
+                color: azure;
+                border-color:white ;
+            }
+            .Reserve:hover{
+                background-color: rgba(3, 3, 91, 0.945);
+                font-size: x-large;
+            }
+            .linge{background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 50px; height: 2px; animation: lin; animation-duration: 1s;}
+            @keyframes lin {
+                from{transform: translateX(-4px) ;}
+            }
+            .rsv{
+                width: 1265px;
+                height: 200px;
+                color: aliceblue;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .sv:hover{
+                transform: scale(1.05);
+                transition-duration: 0.5s;
+                border: solid 2px rgba(11, 11, 101, 0.688);
+                box-shadow: 0 0 20px #03156d , 0 0 30px #c3e2ff  ;
+            }
+            .sv{
+                border-radius: 20px;
+                width: 600px;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                overlay: rgba(0,0,0,0.3);
+            }
+            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            .mil{display: none;}
+             .btn{
+                background: transparent;
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: medium;
+            }
+             .btn:hover{
+                background: rgba(4, 57, 121, 0.507);
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                transform: scale(1.05);
+                color: rgb(255, 255, 255);
+                font-size: large;
+            }
+            .btn:active{
+                background: rgb(2, 41, 90);
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                transform: scale(1.05);
+                color: rgb(255, 255, 255);
+            }
+            .rsv h1:hover{
+                text-shadow:  0 0 20px #03156d , 0 0 30px #c3e2ff  ;
+            }
+            .titre:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            @media screen and (max-width:1024px)  {
+                .rsv{
+                    max-width: 1024px;
+                }
+                .header{
+                    max-width: 1024px;
+                    gap: 10px;
+                }
+                .body{
+                    max-width: 1024px;
+                }
+                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
+                .Menu{display: none;}
+            }
+            @media screen and (max-width:768px)  {
+                .rsv{
+                    max-width: 768px;
+                }
+                .sv{
+                    max-width: 400px;
+                    height: 200px;
+                    font-size: small;
+                }
+                .sv div{
+                    padding: 10px;
+                }
+                .header{
+                    max-width: 768px;
+                    gap: 10px;
+                }
+                .body{
+                    max-width: 768px;
+                }
+                .mil{display: contents;}
+                .Menu{display: none;}
+                .header{display: flex; justify-content: space-between; max-width: 768px;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="header">
+                <div class="logo">
+                    <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
+                    <div><h2 style="font-weight: bolder; color: rgb(16, 66, 152);">SeaNova</h2></div>
+                </div>
+               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div class="Menu">
+                    <div><a href="Acceuil.html"  style="color: rgb(4, 57, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre" >Home</h3></a><div class="linge"></div></div>
+                    <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
+                    <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
+                    <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
+                    <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
+                    <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                </div>
+            </div>
+            <div class="rsv">
+                <div class="sv">
+                    <div><h1 style="font-weight:bolder;">Reserve now to join us and enjoy with us </h1></div>
+                    <a href="reserve.html" ><button class="btn">Reserve</button></a>
+                </div>    
+            </div>
+            <div style="width: 100%; display: flex; justify-content: center;">
+                <Footer style="color: azure;">
+                    <p >&copy: Seaship by Khadija Masrour</p>
+                </Footer>
+            </div>
+        </div>
+    </body> 
+</html>

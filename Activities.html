@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            
+            .body{
+                background-image: url(img/baag.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; 
+                background-position: center;
+                width: 1270px;
+                height: 1700px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: absolute;
+                gap: 50px;
+                top: 0px;
+                left: 0px;
+                overflow-x: hidden;
+            }
+            .header{
+                width: 1265px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                height: 80px;
+                position: absolute;
+                top: 0px;
+                color: azure;
+                left: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top: 0%;
+                z-index: 3;
+            }
+            .reserve button:active{
+                background-color: #120291;
+                color: white;
+            }
+            .Menu{
+                width: 700px;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4px;
+            }
+            .logo{
+                display: flex;
+                height: 60px;
+            }
+            .Activitie{
+                width: 1000px;
+                height: 400px;
+                display: flex;
+                border-radius: 20px;
+                border: solid 2px transparent;
+            }
+            .overlay{
+                color: azure;
+                height: 400px;
+                width: 320px;
+                background: linear-gradient(to right ,transparent,rgb(255, 255, 255));
+                border-radius: 00px;
+                position: relative;
+                bottom: 404px;
+                left: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                padding: 0 40px;
+                text-align: center;
+                font-size: 14px;
+                transition: height 0.5s;
+                z-index: 0;
+            }
+            .article{
+                width: 800px;
+                height: 400px;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                border-radius: 0px 20px 20px 0px;
+            }
+            .cards{
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+            .card{
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+            .Activitie:hover{
+                transform: scale(1.05);
+                transition-duration: 0.5s;
+                border-radius: 20px;
+                border: solid 2px rgba(11, 11, 101, 0.688);
+                box-shadow: 0 0 20px #03156d , 0 0 30px #c3e2ff  ;
+            }
+            .card:hover{
+                transform: scale(1.05);
+                transition-duration: 0.5s;
+                box-shadow: 0 0 10px #03156d , 0 0 20px #c3e2ff  ;
+            }
+            .tit{
+                background: rgb(28, 1, 136);
+                color: white;
+                height: 60px;
+                border-radius:0px 0px 10px 10px ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            .mil{display: none;}
+            .reserve button{
+                background: transparent;
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: medium;
+            }
+            .reserve button:hover{
+                background: rgba(4, 57, 121, 0.507);
+                border: solid 2px rgb(4, 57, 121);
+                border-radius: 30px;
+                width: 140px;
+                height: 50px;
+                color: rgb(4, 57, 121);
+                font-size: large;
+            }
+            .tit:hover{
+                background-color: #130291c6;
+            }
+            .title:hover{
+                text-shadow: 0 0 10px #03156d , 0 0 20px #c3e2ff ;
+            }
+            .Activities{
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+            }
+            .titre:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            .pic{
+                width: 400px; height: 400px; 
+            }
+            .pict{border-radius: 18px 0px 0px 18px; width: 400px; height: 400px;}
+            @media screen and (max-width:1024px)  {
+                .Activities{
+                    width: 800px;
+                    height: 2800px;
+                }
+                .header{
+                    width: 1000px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 1000px;
+                }
+                .mil{display: contents;}
+                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
+                .Menu{display: none;}
+                .article{max-width: 400px;}
+                .pict2{border-radius:10px 10px 0px 0px ; max-width: 100px; height: 100px !important;}
+                .tit{max-width: 100px; font-size: small;}
+            }
+            .pict2{border-radius:10px 10px 0px 0px ; width: 150px; height: 150px;}
+            .image{border-radius: 18px 0px 0px 18px; width: 400px; height: 400px;}
+            @media screen and (max-width:768px)  {
+                .Activities{
+                    width: 400px;
+                    height: 2200px;
+                }
+                .header{
+                    width: 700px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 600px;
+                    height: 3000px;
+                }
+                .overlay{background: linear-gradient( transparent,rgb(255, 255, 255)); left: 0px; bottom: 200px;}
+                .Activitie{max-width: 400px;height: 1400px !important; flex-direction: column;}
+                .mil{display: contents;}
+                .Menu{display: none;}
+                .header{display: flex; justify-content: space-between; max-width: 600px;}
+                .image{border-radius: 18px 18px 0px 0px; width: 400px; height: 400px;}
+                .article{border-radius: 0px 0px 18px 18px ;}
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="header">
+                <div class="logo">
+                    <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
+                </div>
+               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div class="Menu">
+                    <a href="Acceuil.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
+                    <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
+                    <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
+                    <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
+                    <div><a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Activities</h3></a><div style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 70px; height: 2px;"></div></div>
+                    <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                </div>
+                <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
+            </div>
+            <div class="Activities">
+                <div class="Activitie">
+                    <div class="pic" ><img class="image" src="img/article1.jpg"  ><div class="overlay"></div></div>
+                    <div class="article">
+                        <h1 class="title" style="color: #120291;"> Entertainment & Games</h1>
+                        <div class="cards">
+                            <div class="card"><img src="img/Gamerooms.jpg" class="pict2"  ><div class="tit"><h4>Game rooms</h4></div></div>
+                            <div class="card"><img src="img/Arcadegames.jpg" class="pict2" ><div class="tit"><h4>Arcade games</h4></div></div>
+                            <div class="card"><img src="img/Interactivegames.jpg" class="pict2" ><div class="tit"><h4>Interactive games</h4></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Activitie">
+                    <div class="pic"><img src="img/Swimmingpools.jpg" class="image"><div class="overlay"></div></div>
+                    <div class="article">
+                        <h1 class="title" style="color: #120291;"> Pools & Relaxation</h1>
+                        <div class="cards">
+                            <div class="card"><img src="img/pool.jpg" class="pict2" ><div class="tit"><h4>Swimming pools</h4></div></div>
+                            <div class="card"><img src="img/Sundecks.jpg" class="pict2"><div class="tit"><h4>Sun decks</h4></div></div>
+                            <div class="card"><img src="img/massage2.jpg" class="pict2"><div class="tit"><h4>Spa & wellness areas</h4></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Activitie">
+                    <div class="pic"><img src="img/Shows&Events.jpg" class="image"><div class="overlay"></div></div>
+                    <div class="article">
+                        <h1 class="title" style="color: #120291;"> Shows & Events</h1>
+                        <div class="cards">
+                            <div class="card"><img src="img/Liveshows.jpg" class="pict2" ><div class="tit"><h4>Live shows</h4></div></div>
+                            <div class="card"><img src="img/Musicalperformances.jpg" class="pict2"><div class="tit"><h4>Musical acts</h4></div></div>
+                            <div class="card"><img src="img/Onboardparties&events.jpg" class="pict2"><div class="tit"><h4> events</h4></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Activitie">
+                    <div class="pic"><img src="img/Shopping.jpg" class="image"><div class="overlay"></div></div>
+                    <div class="article">
+                        <h1 class="title" style="color: #120291;"> Shopping</h1>
+                        <div class="cards">
+                            <div class="card"><img src="img/Onboardshoppingmalls.jpg" class="pict2" ><div class="tit"><h4>shopping malls</h4></div></div>
+                            <div class="card"><img src="img/Duty-freeshops.jpg" class="pict2"><div class="tit"><h4>Duty-free shops</h4></div></div>
+                            <div class="card"><img src="img/accessoriesstores.jpg" class="pict2"><div class="tit"><h4>accessories stores</h4></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Activitie">
+                    <div class="pic"><img src="img/fom.gif" class="image"><div class="overlay"></div></div>
+                    <div class="article">
+                        <h1 class="title" style="color: #120291;"> sports</h1>
+                        <div class="cards">
+                            <div class="card"><img src="img/gym.jpg" class="pict2" ><div class="tit"><h4>GYM</h4></div></div>
+                            <div class="card"><img src="img/gym2.jpg" class="pict2"><div class="tit"><h4>GYM</h4></div></div>
+                            <div class="card"><img src="img/massage.jpg" class="pict2"><div class="tit"><h4>SPA</h4></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer style="color: azure;">
+                <p >&copy: Seaship by Khadija Masrour</p>
+            </Footer>
+        </div>
+    </body> 
+</html>

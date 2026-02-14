@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            .body{
+                background-image: url(img/baag.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; 
+                background-position: center;
+                width: 1270px;
+                height: 1200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: absolute;
+                gap: 50px;
+                top: 0px;
+                left: 0px;
+            }
+            .header{
+                width: 1265px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                height: 80px;
+                position: absolute;
+                top: 0px;
+                color: azure;
+                left: 0px;
+                display: flex;
+                gap: 200px;
+                align-items: center;
+                position: sticky;
+                top: 0%;
+                z-index: 3;
+            }
+            .Menu{
+                width: 700px;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4px;
+            }
+            .logo{
+                display: flex;
+                height: 60px;
+            }
+            .Reserve{
+                width: 1000px;
+                height: 750px;
+                background-color: transparent;
+                backdrop-filter: blur(10px);
+                color: white;
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+            }
+            
+            .Reserve:hover{
+                box-shadow: 0 0 20px #120291, 0 0 30px #c3e2ff;
+                backdrop-filter: blur(8px);
+                font-size:medium;
+            }
+            .formulaire{
+                width: 700px;
+                height: 750px;
+                background: transparent;
+                backdrop-filter: blur(8px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                border-radius: 0px 18px 18px 0px;
+            }
+            .cards{
+                display: flex;
+                gap: 10px;
+            }
+            .cards input{
+                background: transparent;
+                border-radius: 50px;
+                width: 200px;
+                height: 20px;
+                padding: 10px;
+                border: solid 2px white;
+                color: white;
+            }
+            .cards input:hover{
+                border: solid 2px #120291;
+                box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff ;
+                background: #11037b74;
+            }
+            .cards input:focus{
+                border: solid 2px #120291;
+                box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff ;
+                background: #1d136c74;
+            }
+            .card:hover{
+                border: solid 2px #120291;
+                box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff ;
+                background: #11037b74;
+            }
+            .car:hover{
+                border: solid 2px #120291;
+                box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff ;
+                background: #11037b74;
+            }
+            .cards input::placeholder{
+                color: white;
+            }
+            .cards img{
+                width: 16px;
+                height: 16px;
+                position: relative;
+                right: 35px;
+                top: 5px;
+            }
+            .card{
+                width: 450px;
+                height: 40px;
+                border: solid 2px white;
+                padding: 10px;
+                border-radius: 50px;
+            }
+            .cardd{
+                width: 450px;
+                height: 40px;
+                border: solid 2px white;
+                padding: 10px;
+                border-radius: 50px;
+            }
+            .car{
+                width: 200px;
+                height: 20px;
+                border: solid 2px white;
+                padding: 10px;
+                border-radius: 50px;
+            }
+            .car select{
+                width: 100px;
+                height: 25px;
+                border: solid 1px white;
+                border-radius: 50px;
+            }
+            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            .mil{display: none;}
+            .btn input{
+                background: linear-gradient(rgb(3, 3, 126),rgb(2, 20, 107));
+                width: 200px;
+                height: 50px;
+                border-radius: 30px;
+                color: white;
+                border: solid 1px transparent;
+            }
+            .btn input:hover{
+                background: linear-gradient(rgb(48, 48, 165),rgb(17, 31, 102));
+                width: 200px;
+                height: 50px;
+                border-radius: 30px;
+                color: white;
+                border: solid 2px white;
+                font-size: larger;
+            }
+            
+            .titre:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            .paye{position: relative; right: -10px; top: 10px;}
+            .gen{position: relative; right: -220px; top: 10px;}
+            .image{width: 300px; height: 750px; border-radius: 18px 0px 0px 18px;}
+            @media screen and (max-width:1024px)  {
+                .header{
+                    max-width: 1024px;
+                    gap: 10px;
+                }
+                .body{
+                    max-width: 1024px;
+                    height: 1200px !important;
+                }
+                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
+                .Menu{display: none;}
+                .mil{display: contents;}
+                .cards{flex-direction: column;}
+                .card{  max-width: 350px; height: 40px !important; }
+                .Reserve{max-width: 600px; height: 1000px !important; }
+                .image{width: 200px; height: 1000px; }
+                .formulaire{max-width: 400px; height: 1000px !important; flex-direction: column;}
+                .paye{position: relative; right: -240px; top: 10px;}
+                .gen{position: relative; right: -120px; top: 10px;}
+                .cardd{max-width: 350px; height: 50px !important; border-radius: 10px; }
+                .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+                
+            }
+            @media screen and (max-width:768px)  {
+                .Rooms{
+                    width: 400px;
+                    height: 2200px;
+                }
+                .header{
+                    width: 700px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 600px;
+                    height: 3000px;
+                }
+                .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+                .mil{display: contents;}
+                .Menu{display: none;}
+                .header{display: flex; justify-content: space-between; max-width: 600px;}
+                .cards{flex-direction: column;}
+                .card{  max-width: 350px; height: 40px !important; }
+                .Reserve{max-width: 400px; height: 1000px !important; }
+                .image{width: 0px; height: 0px; }
+                .formulaire{max-width: 400px; height: 1000px !important; flex-direction: column;}
+                .paye{position: relative; right: -240px; top: 10px;}
+                .gen{position: relative; right: -120px; top: 10px;}
+                .cardd{max-width: 350px; height: 50px !important; border-radius: 10px; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="header">
+                <div class="logo">
+                    <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
+                    <div><h2 style="font-weight: bolder; color: rgb(16, 66, 152);">SeaNova</h2></div>
+                </div>
+               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div class="Menu">
+                    <a href="Acceuil.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
+                    <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
+                    <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
+                    <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
+                    <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
+                    <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                </div>
+            </div>
+            <div class="Reserve">
+                <div><img src="img/fom.gif" class="image"  ></div>
+                <div class="formulaire">
+                    <div class="cards">
+                        <div>
+                            <input type="text" placeholder="Full Name" />
+                            <img src="img/user (1).png"  >
+                        </div>
+                        <div>
+                            <label for="Date of Birth">Date of Birth :</label>
+                            <input type="date" id="Date of Birth">
+                            <img src="img/age-group.png" >
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <input type="text" placeholder="National ID card">
+                            <img src="img/credit-card.png" >
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Phone number">
+                            <img src="img/phone-call.png" >
+                        </div>
+                    </div>
+                    <div class="card">
+                        <label for="gender">Gender : </label>
+                        <label for="Male">Male</label>
+                        <input type="radio" id="Male" name="gender" placeholder="Male">
+                        <label for="Female">Female</label>
+                        <input type="radio" id="Female" name="gender" placeholder="Female">
+                        <img src="img/gender.png" class="gen" >
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <input type="text" placeholder="From (Country of departure)">
+                            <img src="img/direction.png" >
+                        </div>
+                        <div>
+                            <input type="text" placeholder="To (Country of destination)">
+                            <img src="img/direction.png" >
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <input type="text" placeholder="Number of persons">
+                            <img src="img/multiple-users-silhouette.png" >
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Passport Number">
+                            <img src="img/passport.png" >
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <input type="text" placeholder="Number of rooms">
+                            <img src="img/bed.png" >
+                        </div>
+                        
+                        <div class="car">
+                            <label for="Type of room">Type of room :</label>
+                            <select name="Type of room" id="Type of room">
+                                <option id="Single room" value="Single room">Single room</option>
+                                <option id="Single room" value="Double room">Double room</option>
+                                <option id="Single room" value="luxury room">luxury room</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cardd">
+                        <label for="Payment Method">Payment Method : </label>
+                        <label for="Cash">Cash</label>
+                        <input type="radio" id="Cash" name="Payment Method" >
+                        <label for="Bank transfer">Bank transfer</label>
+                        <input type="radio" id="Bank transfer" name="Payment Method" >
+                        <label for="Credit carde">Credit card</label>
+                        <input type="radio" id="Credit card" name="Payment Method" >
+                        <img src="img/payment-method.png" class="paye"  >
+                    </div>
+                    <div class="btn"><input type="submit" value="Reserve"/></div>
+                </div>
+            </div>
+            <Footer style="color: azure;">
+                <p >&copy: Seaship by Khadija Masrour</p>
+            </Footer>
+        </div>
+    </body> 
+</html>
