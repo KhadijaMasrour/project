@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="img/logo.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <style>
+            .body{
+                background-image: url(img/baag.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%; 
+                background-position: center;
+                width: 1270px;
+                height: 1200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: absolute;
+                gap: 50px;
+                top: 0px;
+                left: 0px;
+            }
+            .header{
+                width: 1265px;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                height: 80px;
+                position: absolute;
+                top: 0px;
+                color: azure;
+                left: 0px;
+                display: flex;
+                gap: 200px;
+                align-items: center;
+                position: sticky;
+                top: 0%;
+                z-index: 3;
+            }
+            .Menu{
+                width: 700px;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4px;
+            }
+            .logo{
+                display: flex;
+                height: 60px;
+            }
+            .Reserve{
+                width: 1000px;
+                height: 400px;
+                background-color: transparent;
+                backdrop-filter: blur(10px);
+                color: white;
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+            }
+
+            .image{width: 400px; height: 400px; }
+            .Reserve:hover{
+                box-shadow: 0 0 20px #120291, 0 0 30px #c3e2ff;
+                backdrop-filter: blur(8px);
+                font-size:medium;
+            }
+            
+            
+            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            .mil{display: none;}
+            
+            
+            .titre:hover{
+                text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;
+                transform: scale(1.2);
+            }
+            .paye{position: relative; right: -10px; top: 10px;}
+            .gen{position: relative; right: -220px; top: 10px;}
+            .image{width: 300px; height: 750px; border-radius: 18px 0px 0px 18px;}
+            @media screen and (max-width:1024px)  {
+                .header{
+                    max-width: 1024px;
+                    gap: 10px;
+                }
+                .body{
+                    max-width: 1024px;
+                    height: 1200px !important;
+                }
+                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
+                .Menu{display: none;}
+                .mil{display: contents;}
+                .cards{flex-direction: column;}
+                .card{  max-width: 350px; height: 40px !important; }
+                .Reserve{max-width: 600px; height: 1000px !important; }
+                .image{width: 200px; height: 1000px; }
+                .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+                
+            }
+            @media screen and (max-width:768px)  {
+                .Rooms{
+                    width: 400px;
+                    height: 2200px;
+                }
+                .header{
+                    width: 700px;
+                    gap: 10px;
+                }
+                .body{
+                    width: 600px;
+                    height: 3000px;
+                }
+                .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+                .mil{display: contents;}
+                .Menu{display: none;}
+                .header{display: flex; justify-content: space-between; max-width: 600px;}
+                .cards{flex-direction: column;}
+                .card{  max-width: 350px; height: 40px !important; }
+                .Reserve{max-width: 400px; height: 1000px !important; }
+                .image{width: 0px; height: 0px; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="header">
+                <div class="logo">
+                    <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
+                    <div><h2 style="font-weight: bolder; color: rgb(16, 66, 152);">SeaNova</h2></div>
+                </div>
+               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div class="Menu">
+                    <a href="Acceuil.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
+                    <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
+                    <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
+                    <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
+                    <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
+                    <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                </div>
+            </div>
+            <div class="Reserve">
+                <div style="width: 400px; height: 400px;"><img style="width: 400px; height: 400px;" src="img/fom.gif" class="image"  ></div>
+                <div style="width: 600px; height: 400px; display: flex; justify-content: center; align-items: center;">
+                    <div style="width: 500px; height: 100px; display: flex; align-items: center;"><h2>Your booking has been successfully completed. We wish you a pleasant journey.</h2><img src="img/check.png" style="width: 44px; height: 44px;" ></div>
+                </div>
+            </div>
+            <Footer style="color: azure;">
+                <p >&copy: Seaship by Khadija Masrour</p>
+            </Footer>
+        </div>
+    </body> 
+</html>
