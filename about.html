@@ -25,10 +25,11 @@
                 overflow-x: hidden;
             }
             .header{
-                width: 100%;
+                width: 1265px;
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(5px);
                 height: 80px;
+                width: 100%;
                 position: absolute;
                 top: 0px;
                 color: azure;
@@ -44,7 +45,7 @@
                 background-color: #120291;
                 color: white;
             }
-            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            #burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
             .mil{display: none;}
             .reserve button{
                 background: transparent;
@@ -64,12 +65,13 @@
                 color: rgb(4, 57, 121);
                 font-size: large;
             }
-            .Menu{
-                width: 700px;
+            #Menu{
+                width: 800px;
                 height: 60px;
                 display: flex;
                 justify-content: space-between;
                 z-index: 4px;
+                gap: 10px;
             }
             .logo{
                 display: flex;
@@ -190,7 +192,6 @@
                 .par{
                     display: flex; padding: 20px; align-items: center; justify-content: center; color: white; height: 360px ; width: 360px;  background: #28215e9a; font-size: x-large;
                 }
-                
                 .About{
                     width: 800px;
                     height: 2800px;
@@ -198,20 +199,80 @@
                 .Articls{
                     max-width: 800px ; width: 100%; height: 900px; flex-wrap: wrap;
                 }
-                .header{
-                    width: 1000px;
-                    gap: 10px;
-                }
-                .body{
-                    width: 1000px;
-                }
+                .par2{max-width: 350px;}
+                .mil{display: contents;}
+                
                 .overlay{max-width: 120px; bottom: 200px;}
                 .overlay p {font-size: small; max-width: 150px;}
                 .box:hover .overlay{
                     height: 200px !important;
                 }
-                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
-                .Menu{display: none;}
+                .header{display: flex;  justify-content:space-around; gap: 50%; }
+                .reserve button{color: white; border: solid 1px white;}
+                .reserve {display: flex; justify-content: center;}
+                #Menu{
+                    width: 0px;
+                    display: none;
+                }
+                
+                #Menu h3{
+                    color: white;
+                }
+                #Menu.active{
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
+                }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                    font-size: 24px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    z-index: 3;
+                }
+                .header{
+                    max-width: 100%;
+                }
+                .body{
+                    max-width: 100%;
+                    height: 2400px;
+                    overflow: visible;
+                }
+                .linge{display: none;}
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 220px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
             }
             @media screen and (max-width:768px)  {
                 .Intro{
@@ -224,6 +285,7 @@
                     width: 200px;
                     height: 70px;
                 }
+                
                 .About{
                     width: 400px;
                     height: 2200px;
@@ -231,22 +293,81 @@
                 .Articls{
                     max-width: 400px ; width: 100%; height: 1600px; flex-direction: column;
                 }
-                .header{
-                    width: 700px;
-                    gap: 10px;
-                }
-                .body{
-                    width: 600px;
-                    height: 3000px;
-                }
+                
                 .pic{width: 100%; max-width: 200px; height: 200px !important;}
                 .mp{width: 100%; max-width: 200px; height: 200px !important;}
                 .pict{border-radius: 0px 0px 18px 18px;}
                 .pict2{border-radius: 18px 18px 0px 0px;}
                 .par2{border-radius: 0px 0px 18px 18px; }
-                .mil{display: contents;}
-                .Menu{display: none;}
-                .header{display: flex; justify-content: space-between; max-width: 600px;}
+                .mil{display: flex; width: 10px; justify-content: center;  }
+                .header{display: flex; justify-content: space-around; gap: 50%; }
+
+                .header{
+                    max-width: 100%;
+                }
+                .body{
+                    max-width: 100% !important;
+                    height: 3500px;
+                    overflow: visible;
+                }
+                .reserve button{color: white; border: solid 1px white;}
+                .reserve {display: flex; justify-content: center;}
+                
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 220px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
+                .linge{display: none;}
+
+                #Menu{
+                    width: 0px;
+                    display: none;
+                }
+                #Menu h3{
+                    color: white;
+                }
+                #Menu.active{
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
+                }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                font-size: 24px;
+                padding: 10px 15px;
+                cursor: pointer;
+                z-index: 3;
+                }
             }
         </style>
     </head>
@@ -256,16 +377,18 @@
                 <div class="logo">
                     <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
                 </div>
-                <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
-                <div class="Menu">
+                <div class="mil"><button id="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div id="Menu">
                     <a href="index.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
-                    <div><a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre" class="titre">About the City</h3></a><div class="linge"></div></div>
+                    <div><a href="about.html" class="hu"  style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3  class="titre">About the City</h3></a><div class="linge"></div></div>
                     <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
                     <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
                     <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Activities</h3></a>
                     <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                    <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
                 </div>
-                <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
+                <script src="burger.js"></script>
+                
             </div>
             <div class="About">
                 <div class="Intro" style=" height: 400px; width: 1000px; display: flex; border-radius: 20px;"><div class="par" ><p style="font-style: italic;">Welcome to a vibrant coastal city where the sea shapes everyday life. Known for its beautiful shoreline, rich maritime history, and warm hospitality, the city offers the perfect balance between relaxation and discovery. Whether you are here for a short escape or a longer stay, you will find a unique atmosphere inspired by the ocean, culture, and local traditions.</p></div>
@@ -311,7 +434,7 @@
                     </div>
                 </div>
                 <div class="Intro" style=" height: 400px; width: 1000px; display: flex; ">
-                    <div><img src="img/fom.gif" class="pict2" > <div class="overlay"></div></div>
+                    <div><img src="img/shipgif.gif" class="pict2" > <div class="overlay"></div></div>
                     <div class="par2" >
                         <p style="font-style: italic;">Like a journey at sea, your stay is filled with comfort, discovery, and memorable experiences. More than a visit, it is a voyage inspired by the spirit of the ocean.</p>
                         <div class="lin" style=" display: flex; justify-content: center; align-items: center; height: 50px; width: 400px; background-color:#28215edf ; border-radius: 50px;"><h6 style="color: #565084;">For more informations watch this <a href="https://www.youtube.com/watch?v=aLSAf3PYfek" target="_blank" style="color: #120291;">video</a>  </h6> </div>

@@ -12,7 +12,7 @@
                 background-size: 100% 100%; 
                 background-position: center;
                 width: 100%;
-                height: 800px;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -23,10 +23,11 @@
                 left: 0px;
             }
             .header{
-                width: 100%;
+                width: 1265px;
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(5px);
                 height: 80px;
+                width: 100%;
                 position: absolute;
                 top: 0px;
                 color: azure;
@@ -38,12 +39,13 @@
                 top: 0%;
                 z-index: 3;
             }
-            .Menu{
-                width: 700px;
+            #Menu{
+                width: 900px;
                 height: 60px;
                 display: flex;
                 justify-content: space-between;
                 z-index: 4px;
+                gap: 30px;
             }
             .reserve button:active{
                 background-color: #120291;
@@ -69,7 +71,7 @@
                 display: flex;
                 justify-content: space-around;
             }
-            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            #burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
             .mil{display: none;}
             .reserve button{
                 background: transparent;
@@ -111,40 +113,143 @@
                     width: 800px;
                     height: 2800px;
                 }
-                .header{
-                    width: 1000px;
-                    gap: 10px;
-                }
-                .body{
-                    width: 1000px;
-                }
+                
+                
                 .box-area{
                     flex-wrap: wrap;
                     max-width: 800px;
                 }
-                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
-                .Menu{display: none;}
                 .Contact{max-width: 750px; gap: 0px;}
-            }
-            @media screen and (max-width:768px)  {
-                .Rooms{
-                    width: 400px;
-                    height: 2200px;
+                .mil{display: contents;}
+                .header{display: flex;  justify-content:space-around; gap: 50%; }
+                .reserve button{color: white; border: solid 1px white;}
+                .reserve {display: flex; justify-content: center;}
+                #Menu{
+                    width: 0px;
+                    display: none;
                 }
-                .header{
-                    width: 700px;
+                
+                #Menu h3{
+                    color: white;
+                }
+                #Menu.active{
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
                     gap: 10px;
                 }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                    font-size: 24px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    z-index: 3;
+                }
+                .header{
+                    max-width: 100%;
+                }
+                .body{
+                    max-width: 100%;
+                    height: 2400px;
+                    overflow: visible;
+                }
+                .linn{display: none;}
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 170px;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
+            }
+            @media screen and (max-width:768px)  {
+                
                 .body{
                     width: 600px;
                     height: 3000px;
                 }
                 .mil{display: contents;}
-                .Menu{display: none;}
-                .header{display: flex; justify-content: space-between; max-width: 600px;}
-                .Contact{max-width: 400px; flex-direction: column; height: 600px !important; align-items: center;}
+                .Contact{max-width: 50%; flex-direction: column; height: 600px !important; align-items: center;}
                 .ctn{flex-direction: column; max-width: 300px; height: 400px !important; }
                 .ctn2{max-width: 0px; height: 0px !important; }
+
+                .header{
+                    width: 100%;
+                }
+                .body{
+                    width: 100%;
+                    height: 4500px;
+                    overflow: visible;
+                }
+                .reserve button{color: white; border: solid 1px white;}
+                .reserve {display: flex; justify-content: center;}
+                #Menu{
+                    width: 0px;
+                    transition: width 0.3s  ease;
+                    transition-duration: right 5s  ease;
+                }
+                #Menu h3{
+                    color: white;
+                }
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 180px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                }
+                #Menu.active{
+                    transition: width 0.4s cubic-bezier(.77,0,.18,1);
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                }
+
+                #burger{
+                font-size: 24px;
+                padding: 10px 15px;
+                cursor: pointer;
+                z-index: 3;
+                }
             }
             .ip:hover{
                 width: 30px;
@@ -166,41 +271,42 @@
                 <div class="logo">
                     <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
                 </div>
-               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
-                <div class="Menu">
+               <div class="mil"><button id="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div id="Menu">
                     <a href="index.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
                     <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
                     <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
                     <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
                     <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
-                    <div><a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Contact </h3> </a>
-                        <div style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 70px; height: 2px;"></div>
+                    <div><a class="hu" href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Contact </h3> </a>
+                        <div class="linn" style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 70px; height: 2px;"></div>
                     </div>
+                    <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
                 </div>
-                <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
+                <script src="burger.js"></script>
             </div>
             <div class="Contact">
                 <div><h1>Contact us</h1></div>
                 <div class="ctn">
                     <div class="ctn1">
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img  src="img/whatsapp.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img  src="../premier_projet/img/whatsapp.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| Whatsapp : 0661840777</h3></div>
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/facebook.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/facebook.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| FaceBook : SeaNova </h3></div>
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/tik-tok.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/tik-tok.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| Tiktok : SeaNova </h3></div>
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/instagram.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/instagram.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| Instagram : SeaNova </h3></div>
                     </div>
                     <div class="ctn2"></div>
                     <div class="ctn3">
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/youtube.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/youtube.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| Youtube : SeaNova</h3></div>
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/spotify.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/spotify.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| Spotify: SeaNova </h3></div>
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/discord.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
-                        bottom: 15px;">| discord : <a href="https://discord.gg/aB4BbgrdkE" style="color: white; text-decoration: solid;"> discord.gg/SeaNova</a> </h3></div>
-                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="img/mail.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/discord.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
+                        bottom: 15px;">| discord : <a href="https://discord.gg/jmdgF3rY" style="color: white; text-decoration: solid;"> discord.gg/SeaNova</a> </h3></div>
+                        <div class="tn" style="display: flex; gap: 10px;"  ><div class="ip"><img src="../premier_projet/img/mail.png" style="color: aliceblue; width: 24px; height: 24px;"></div><h3 style="position: relative;
                         bottom: 15px;">| Email : SeaNova@gmail.com </h3></div>
                     </div>
                 </div>

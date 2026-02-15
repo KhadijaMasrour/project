@@ -24,10 +24,11 @@
                 overflow-x: hidden;
             }
             .header{
-                width: 100%;
+                width: 1265px;
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(5px);
                 height: 80px;
+                width: 100%;
                 position: absolute;
                 top: 0px;
                 color: azure;
@@ -43,7 +44,7 @@
                 background-color: #120291;
                 color: white;
             }
-            .Menu{
+            #Menu{
                 width: 700px;
                 height: 60px;
                 display: flex;
@@ -84,7 +85,7 @@
                 color: rgb(4, 57, 121);
                 font-size: medium;
             }
-            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            #burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
             .mil{display: none;}
             .reserve button:hover{
                 background: rgba(4, 57, 121, 0.507);
@@ -162,17 +163,77 @@
                     height: 3400px !important;
                 }
                 .header{
-                    width: 1000px;
-                    gap: 10px;
+                    width: 100%;
                 }
-                .body{
-                    width: 1000px;
-                    height: 3500px !important;
-                }
-                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
-                .Menu{display: none;}
+                
+                .ourrest{max-width: 800px; height: 3000px !important;}
                 .ourres{max-width: 800px; height: 3000px !important; }
                 .Others{max-width: 800px; height: 1600px !important; }
+                .mil{display: contents;}
+                .header{display: flex;  justify-content:space-around; gap: 50%; }
+                .reserve button{color: white; border: solid 1px white;}
+                .reserve {display: flex; justify-content: center;}
+                #Menu{
+                    width: 0px;
+                    display: none;
+                }
+                
+                #Menu h3{
+                    color: white;
+                }
+                #Menu.active{
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
+                }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                    font-size: 24px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    z-index: 3;
+                }
+                
+                .body{
+                    max-width: 100%;
+                    height: 5000px;
+                    overflow: visible;
+                }
+                .linn{display: none;}
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 220px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
             }
             @media screen and (max-width:768px)  {
                 .Rest{
@@ -181,20 +242,78 @@
                 }
                 .ourrest{
                     height: 5400px !important;
-                }
-                .header{
-                    width: 700px;
-                    gap: 10px;
-                }
-                .body{
                     width: 600px;
-                    height: 5700px;
                 }
+                
+                
                 .mil{display: contents;}
-                .Menu{display: none;}
-                .header{display: flex; justify-content: space-between; max-width: 600px;}
                 .ourres{max-width: 600px; height: 5400px !important; }
                 .Others{max-width: 600px; height: 2800px !important; }
+
+                .header{display: flex; justify-content: space-around; gap: 50%; max-width: 100%; }
+                .body{
+                    width: 100%;
+                    height: 8700px !important;
+                    overflow: visible;
+                }
+                
+                #Menu h3{
+                    color: white;
+                }
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 180px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
+                .reserve button{color: white; border: solid 1px white;}
+                .reserve {display: flex; justify-content: center;}
+
+                div h3{
+                    animation-name: titre;
+                    animation-duration:1.5s ;
+                }
+                #Menu.active{
+                    transition: width 0.4s cubic-bezier(.77,0,.18,1);
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
+                }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                font-size: 24px;
+                padding: 10px 15px;
+                cursor: pointer;
+                z-index: 3;
+                }
             }
         </style>
     </head>
@@ -204,16 +323,17 @@
                 <div class="logo">
                     <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
                 </div>
-               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
-                <div class="Menu">
+               <div class="mil"><button id="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div id="Menu">
                     <a href="index.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
                     <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
                     <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
-                    <div><a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Restaurants</h3></a><div style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 90px; height: 2px;"></div></div>
+                    <div><a href="Restaurants.html" class="hu"  style="color: rgb(4, 4, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre">Restaurants</h3></a><div class="linn" style="background: #022262; box-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff; width: 90px; height: 2px;"></div></div>
                     <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
                     <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
+                    <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
                 </div>
-                <div class="reserve" style="width: 200px; height: 50px;"><a href="reserve.html"><button>Reserve</button></a></div>
+                <script src="burger.js"></script>
             </div>
             <div class="Rest">
                 <div class="ourrest">

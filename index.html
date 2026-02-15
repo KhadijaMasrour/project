@@ -15,7 +15,7 @@
                 background-size: 100% 100%; 
                 background-position: center;
                 width: 100%;
-                height: 650px;
+                height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -26,10 +26,10 @@
                 left: 0px;
             }
             .header{
-                width: 100%;
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(5px);
                 height: 80px;
+                width: 100%;
                 position: absolute;
                 top: 0px;
                 color: azure;
@@ -41,7 +41,7 @@
                 top: 0%;
                 z-index: 3;
             }
-            .Menu{
+            #Menu{
                 width: 700px;
                 height: 60px;
                 display: flex;
@@ -52,6 +52,7 @@
                 display: flex;
                 height: 60px;
             }
+            
             .Reserve{
                 width: 150px;
                 height: 70px;
@@ -70,7 +71,7 @@
                 from{transform: translateX(-4px) ;}
             }
             .rsv{
-                width: 1265px;
+                width: 100%;
                 height: 200px;
                 color: aliceblue;
                 display: flex;
@@ -96,7 +97,7 @@
                 backdrop-filter: blur(5px);
                 overlay: rgba(0,0,0,0.3);
             }
-            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            #burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
             .mil{display: none;}
              .btn{
                 background: transparent;
@@ -131,40 +132,151 @@
             }
             @media screen and (max-width:1024px)  {
                 .rsv{
-                    max-width: 1024px;
+                    max-width: 100% !important;
                 }
-                .header{
-                    max-width: 1024px;
+                .mil{display: contents;}
+                .header{display: flex;  justify-content:space-around; gap: 50%; max-width: 100%; }
+                #Menu{
+                    width: 0px;
+                    display: none;
+                }
+                
+                #Menu h3{
+                    color: white;
+                }
+                #Menu.active{
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
                     gap: 10px;
                 }
-                .body{
-                    max-width: 1024px;
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
                 }
-                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
-                .Menu{display: none;}
+
+                #burger{
+                    font-size: 24px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    z-index: 3;
+                }
+                
+                .body{
+                    max-width: 100% !important;
+                    height: 100%;
+                    overflow: visible;
+                }
+                .linge{display: none;}
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 170px;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
             }
             @media screen and (max-width:768px)  {
                 .rsv{
-                    max-width: 768px;
+                    max-width: 100%;
                 }
                 .sv{
-                    max-width: 400px;
+                    max-width: 50%;
                     height: 200px;
                     font-size: small;
                 }
                 .sv div{
                     padding: 10px;
                 }
-                .header{
-                    max-width: 768px;
-                    gap: 10px;
-                }
-                .body{
-                    max-width: 768px;
-                }
+                .linge{display: none;}
                 .mil{display: contents;}
-                .Menu{display: none;}
-                .header{display: flex; justify-content: space-between; max-width: 768px;}
+                
+                .header{display: flex; justify-content: space-around; gap: 25%; max-width: 100% !important; }
+                .body{
+                    max-width: 100% ;
+                    height: 100%;
+                    overflow: visible;
+                }
+                
+                #Menu h3{
+                    color: white;
+                }
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 180px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
+
+                div h3{
+                    animation-name: titre;
+                    animation-duration:1.5s ;
+                }
+                #Menu.active{
+                    transition: width 0.4s cubic-bezier(.77,0,.18,1);
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
+                }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                font-size: 24px;
+                padding: 10px 15px;
+                cursor: pointer;
+                z-index: 3;
+                }
             }
         </style>
     </head>
@@ -175,15 +287,16 @@
                     <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
                     <div><h2 style="font-weight: bolder; color: rgb(16, 66, 152);">SeaNova</h2></div>
                 </div>
-               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
-                <div class="Menu">
-                    <div><a href="index.html"  style="color: rgb(4, 57, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre" >Home</h3></a><div class="linge"></div></div>
+               <div class="mil"><button id="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div id="Menu">
+                    <div><a href="index.html" class="hu"  style="color: rgb(4, 57, 121); text-decoration:solid; text-shadow: 0 0 5px #120291, 0 0 20px #c3e2ff;"><h3 class="titre" >Home</h3></a><div class="linge"></div></div>
                     <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
                     <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
                     <a href="Restaurants.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Restaurants</h3></a>
                     <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
                     <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
                 </div>
+                <script src="burger.js"></script>
             </div>
             <div class="rsv">
                 <div class="sv">

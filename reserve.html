@@ -26,7 +26,7 @@
                 width: 100%;
                 background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(5px);
-                height: 80px;
+                width: 100%;
                 position: absolute;
                 top: 0px;
                 color: azure;
@@ -38,7 +38,7 @@
                 top: 0%;
                 z-index: 3;
             }
-            .Menu{
+            #Menu{
                 width: 700px;
                 height: 60px;
                 display: flex;
@@ -147,7 +147,7 @@
                 border: solid 1px white;
                 border-radius: 50px;
             }
-            .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
+            #burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
             .mil{display: none;}
             .btn input{
                 background: linear-gradient(rgb(3, 3, 126),rgb(2, 20, 107));
@@ -175,16 +175,10 @@
             .gen{position: relative; right: -220px; top: 10px;}
             .image{width: 300px; height: 750px; border-radius: 18px 0px 0px 18px;}
             @media screen and (max-width:1024px)  {
-                .header{
-                    max-width: 1024px;
-                    gap: 10px;
-                }
+                
                 .body{
-                    max-width: 1024px;
                     height: 1200px !important;
                 }
-                .header{display: flex; gap: 400px; justify-content:flex-start; max-width: 1024px;}
-                .Menu{display: none;}
                 .mil{display: contents;}
                 .cards{flex-direction: column;}
                 .card{  max-width: 350px; height: 40px !important; }
@@ -196,32 +190,173 @@
                 .cardd{max-width: 350px; height: 50px !important; border-radius: 10px; }
                 .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
                 
-            }
-            @media screen and (max-width:768px)  {
-                .Rooms{
-                    width: 400px;
-                    height: 2200px;
+
+                .mil{display: contents;}
+                .header{display: flex;  justify-content:space-around; gap: 50%; }
+                #Menu{
+                    width: 0px;
+                    display: none;
                 }
-                .header{
-                    width: 700px;
+                
+                #Menu h3{
+                    color: white;
+                }
+                #Menu.active{
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
                     gap: 10px;
                 }
-                .body{
-                    width: 600px;
-                    height: 3000px;
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
                 }
+
+                #burger{
+                    font-size: 24px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    z-index: 3;
+                }
+                .header{
+                    max-width: 100%;
+                }
+                .body{
+                    max-width: 100%;
+                    height: 2400px;
+                    overflow: visible;
+                }
+                .linn{display: none;}
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 170px;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
+                
+            }
+            @media screen and (max-width:768px)  {
+                
                 .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
                 .mil{display: contents;}
-                .Menu{display: none;}
-                .header{display: flex; justify-content: space-between; max-width: 600px;}
                 .cards{flex-direction: column;}
-                .card{  max-width: 350px; height: 40px !important; }
-                .Reserve{max-width: 400px; height: 1000px !important; }
+                .card{  max-width: 250px; height: 30px !important; }
+                .Reserve{max-width: 50% !important; height: 1000px !important; }
                 .image{width: 0px; height: 0px; }
-                .formulaire{max-width: 400px; height: 1000px !important; flex-direction: column;}
+                .formulaire{max-width: 100%; height: 90% !important; flex-direction: column;}
                 .paye{position: relative; right: -240px; top: 10px;}
                 .gen{position: relative; right: -120px; top: 10px;}
-                .cardd{max-width: 350px; height: 50px !important; border-radius: 10px; }
+                .cardd{max-width: 300px; height: 100px !important; border-radius: 10px; gap: 10px; display: flex; flex-direction: column; align-items: center; }
+                .mtd{display: flex;}
+                .card img{
+                    width: 16px;
+                    height: 16px;
+                    position: relative;
+                    right: -35px;
+                    top: 5px;
+                }
+                .cards img{
+                    width: 16px;
+                    height: 16px;
+                    position: relative;
+                    right: 40px;
+                    top: 5px;
+                }
+                .cardd img{
+                    width: 24px;
+                    height: 24px;
+                    position: relative;
+                    right: -105px;
+                    top: -70px;
+                }
+                
+                .header{display: flex; justify-content: space-around; gap: 40%; max-width: 100%; }
+                .body{
+                    max-width: 100% ;
+                    height:100%;
+                    overflow: visible;
+                }
+                
+                #Menu h3{
+                    color: white;
+                }
+                .hu{
+                    color: white;
+                    background:linear-gradient(#0b0364b6)  ;
+                    width: 180px;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 15px;
+                    opacity: 1;
+                    transition:opacity 0.2s ;
+                    animation: titre;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes titre {
+                    from{opacity: 0.2;}
+                    to{opacity: 1;}
+                }
+
+                div h3{
+                    animation-name: titre;
+                    animation-duration:1.5s ;
+                }
+                #Menu.active{
+                    transition: width 0.4s cubic-bezier(.77,0,.18,1);
+                    right: 0;
+                    position: fixed;
+                    top: 0;
+                    width: 250px;
+                    height: 100vh;
+                    background: #11049779;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-size: x-large;
+                    z-index: 2; 
+                    animation-name: asidebar;
+                    animation-duration: 0.3s;
+                }
+                
+                @keyframes asidebar {
+                    from{right: -250px; }
+                    to{right: 0px;}
+                }
+
+                #burger{
+                font-size: 24px;
+                padding: 10px 15px;
+                cursor: pointer;
+                z-index: 3;
+                }
             }
         </style>
     </head>
@@ -232,8 +367,8 @@
                     <div><img src="img/logo.png" style="width: 150px; height: 150px; position: relative; top: -40px;"></div>
                     <div><h2 style="font-weight: bolder; color: rgb(16, 66, 152);">SeaNova</h2></div>
                 </div>
-               <div class="mil"><button class="burger" aria-label="Ouvrir le menu">☰</button></div>
-                <div class="Menu">
+               <div class="mil"><button id="burger" aria-label="Ouvrir le menu">☰</button></div>
+                <div id="Menu">
                     <a href="index.html"  style="color: rgb(4, 57, 121); text-decoration:solid;"><h3 class="titre" >Home</h3></a>
                     <a href="about.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre" class="titre">About the City</h3></a>
                     <a href="Rooms.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Rooms</h3></a>
@@ -241,6 +376,7 @@
                     <a href="Activities.html"  style="color: rgb(4, 4, 121); text-decoration:solid;"><h3 class="titre">Activities</h3></a>
                     <a href="Contact.html" style="color: rgb(4, 4, 121); text-decoration:solid; "><h3 class="titre">Contact </h3> </a>
                 </div>
+                <script src="burger.js"></script>
             </div>
             <div class="Reserve">
                 <div><img src="img/fom.gif" class="image"  ></div>
@@ -250,53 +386,52 @@
                             <input type="text" placeholder="Full Name" />
                             <img src="img/user (1).png"  >
                         </div>
-                        <div>
+                        <div class="cards">
                             <label for="Date of Birth">Date of Birth :</label>
                             <input type="date" id="Date of Birth">
-                            <img src="img/age-group.png" >
                         </div>
                     </div>
                     <div class="cards">
                         <div>
-                            <input type="text" placeholder="National ID card" required>
+                            <input type="text" placeholder="National ID card">
                             <img src="img/credit-card.png" >
                         </div>
                         <div>
-                            <input type="text" placeholder="Phone number" required>
+                            <input type="text" placeholder="Phone number">
                             <img src="img/phone-call.png" >
                         </div>
                     </div>
                     <div class="card">
                         <label for="gender">Gender : </label>
                         <label for="Male">Male</label>
-                        <input type="radio" id="Male" name="gender" placeholder="Male" required>
+                        <input type="radio" id="Male" name="gender" placeholder="Male">
                         <label for="Female">Female</label>
-                        <input type="radio" id="Female" name="gender" placeholder="Female" required>
+                        <input type="radio" id="Female" name="gender" placeholder="Female">
                         <img src="img/gender.png" class="gen" >
                     </div>
                     <div class="cards">
                         <div>
-                            <input type="text" placeholder="From (Country of departure)" required>
+                            <input type="text" placeholder="From (Country of departure)">
                             <img src="img/direction.png" >
                         </div>
                         <div>
-                            <input type="text" placeholder="To (Country of destination)" required>
+                            <input type="text" placeholder="To (Country of destination)">
                             <img src="img/direction.png" >
                         </div>
                     </div>
                     <div class="cards">
                         <div>
-                            <input type="text" placeholder="Number of persons" required>
+                            <input type="text" placeholder="Number of persons">
                             <img src="img/multiple-users-silhouette.png" >
                         </div>
                         <div>
-                            <input type="text" placeholder="Passport Number" required>
+                            <input type="text" placeholder="Passport Number">
                             <img src="img/passport.png" >
                         </div>
                     </div>
                     <div class="cards">
                         <div>
-                            <input type="text" placeholder="Number of rooms" required>
+                            <input type="text" placeholder="Number of rooms">
                             <img src="img/bed.png" >
                         </div>
                         
@@ -311,15 +446,21 @@
                     </div>
                     <div class="cardd">
                         <label for="Payment Method">Payment Method : </label>
-                        <label for="Cash">Cash</label>
-                        <input type="radio" id="Cash" name="Payment Method" required >
-                        <label for="Bank transfer">Bank transfer</label>
-                        <input type="radio" id="Bank transfer" name="Payment Method" required >
-                        <label for="Credit carde">Credit card</label>
-                        <input type="radio" id="Credit card" name="Payment Method" required >
+                        <div class="mtd">
+                            <label for="Cash">Cash</label>
+                            <input type="radio" id="Cash" name="Payment Method" >
+                        </div>
+                        <div class="mtd">
+                            <label for="Bank transfer">Bank transfer</label>
+                            <input type="radio" id="Bank transfer" name="Payment Method" >
+                        </div>
+                        <div class="mtd">
+                            <label for="Credit carde">Credit card</label>
+                            <input type="radio" id="Credit card" name="Payment Method" >
+                        </div>
                         <img src="img/payment-method.png" class="paye"  >
                     </div>
-                    <div class="btn"><a href="reservationestvalidé.html" target="_parent"><input type="submit" value="Reserve" required/></a></div>
+                    <div class="btn"><input type="submit" value="Reserve"/></div>
                 </div>
             </div>
             <Footer style="color: azure;">
