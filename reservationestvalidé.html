@@ -109,7 +109,7 @@
                 }
                 .body{
                     width: 600px;
-                    height: 3000px;
+                    height: 100%;
                 }
                 .burger { margin-left: auto; border: 1px solid #ddd; background: #11049779; padding: 6px 10px; border-radius: 8px; }
                 .mil{display: contents;}
@@ -117,8 +117,25 @@
                 .header{display: flex; justify-content: space-between; max-width: 600px;}
                 .cards{flex-direction: column;}
                 .card{  max-width: 350px; height: 40px !important; }
-                .Reserve{max-width: 400px; height: 1000px !important; }
-                .image{width: 0px; height: 0px; }
+                .Reserve{max-width: 30%; height: 30% !important; display: flex; justify-content: center; align-items: center; }
+                .image{
+                    display: none;
+                }
+
+                .Reserve h2{
+                    display: none;
+                }
+
+                .Reserve img{
+                    display: none;
+                }
+
+                .Reserve img[src*="check"]{
+                    display: block;
+                    margin: auto;
+                    width: 80px;
+                    height: 80px;
+                }
             }
         </style>
     </head>
@@ -146,7 +163,7 @@
                 </div>
             </div>
             <Footer style="color: azure;">
-                <p >&copy: Seaship by Khadija Masrour</p>
+                <p >&copy: Seaship by Khadija </p>
             </Footer>
         </div>
     </body> 
